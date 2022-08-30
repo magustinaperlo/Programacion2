@@ -1,3 +1,11 @@
+# Ejercicio 1
+# Vamos a crear una clase llamada Persona. Sus atributos son: nombre, edad y DNI.
+# Construye los siguientes métodos para la clase:
+#  Un constructor, donde los datos pueden estar vacíos.
+#  Los setters y getters para cada uno de los atributos. Hay que validar las entradas
+# de datos.
+#  mostrar(): Muestra los datos de la persona.
+#  esMayorDeEdad(): Devuelve un valor lógico indicando si es mayor de edad.
 
 
 class Persona():
@@ -42,10 +50,9 @@ class Persona():
         except:
              print("El dni ingresado es incorrecto. solo numeros")
 
-# persona = Persona()
-# persona.setNombre("Dan")
-# persona.setDni(12345678)
-# persona.setEdad(18)
-# persona.mostrar()
-# persona.esMayorDeEdad()
-
+persona = Persona()
+persona.setNombre("")
+persona.setDni(123456786985)
+persona.setEdad(1800)
+persona.mostrar()
+persona.esMayorDeEdad()
