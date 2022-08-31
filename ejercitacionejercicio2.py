@@ -1,4 +1,4 @@
-from ejercitacionejercicio1 import Persona
+
 
 class Cuenta():
     def __init__(self,nombre):
@@ -32,12 +32,5 @@ class Cuenta():
             print("Debe ingresar solo numeros")
 
 
-# persona = Persona()
-# persona.setNombre("Dan")
-# persona.setDni(323233)
-# persona.setEdad(32)
-# cuenta = Cuenta(persona.getNombre())
-# cuenta.mostrar()
-# cuenta.ingresar(300)
-# cuenta.mostrar()
-# cuenta.retirar(200)
+
+

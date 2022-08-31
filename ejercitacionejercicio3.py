@@ -1,10 +1,11 @@
-from ejercitacionejercicio1 import Persona
+
 from ejercitacionejercicio2 import Cuenta
 
 
 class CuentaJoven(Cuenta):
     def __init__(self,nombre):
         super().__init__(nombre)
+        self.edad= 0
         self.bonificacion = 0
         self.tipocuenta = "Estandar"
     def setBonificacion(self,valor):
@@ -16,10 +17,20 @@ class CuentaJoven(Cuenta):
         except:
              print("Caracter no soportado")
     def esTitularValido(self):
-        if persona.getEdad() >= 18 and persona.getEdad() < 25:
+        if self.getEdad() >= 18 and self.getEdad() < 25:
             return True
         else:
             return False
+    def getEdad(self):
+        return self.edad
+    def setEdad(self,valor):
+        try:
+            if valor > 0 and 100 > valor:
+                self.edad = valor
+            else:
+                print("La edad debe ser entre 0 y 100 años")
+        except:
+            print("Error - Solo se permite numeros")
     def setTipoCuenta(self):
         if self.esTitularValido():
             self.tipocuenta = "Cuenta Joven"
@@ -43,17 +54,7 @@ class CuentaJoven(Cuenta):
             except:
                 print("Debe ingresar solo numeros")
         else:
-            print("El titular no es valido")
+            print("El titular no es valido - debe ser menor de 25 años")
 
-persona = Persona()
-persona.setNombre("Dan")
-persona.setDni(323233)
-persona.setEdad(26)
-cuenta = CuentaJoven(persona.getNombre())
-cuenta.setTipoCuenta()
-cuenta.TipoCuenta()
-cuenta.mostrar()
-cuenta.ingresar(500)
-cuenta.mostrar()
-cuenta.retirar(150.50)
+
 

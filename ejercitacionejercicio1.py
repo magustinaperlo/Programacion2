@@ -23,29 +23,30 @@ class Persona():
     def setNombre(self,valor):
         if valor != " " and len(valor) > 2 :
             self.nombre = valor
+            return True
         else:
             print("El nombre debe contener mas de 2 caracteres")
+            return False
     def setEdad(self,valor):
         try:
-            if int(valor) > 0:
+            if int(valor) > 0 and 100 > int(valor):
                 self.edad = int(valor)
+                return True
             else:
-                print("La edad debe estar entr 0 y 100 años")
+                print("La edad debe ser entre 0 y 100 años")
+                return False
         except:
             print("La edad ingresada es incorrecta")
+            return False
     def setDni(self,valor):
         try:
             if len(str(valor))>= 6 and len(str(valor))<= 8:
                 self.dni = int(valor)
+                return True
             else:
                 print("la cantidad de caracteres del dni es incorrecta")
+                return False
         except:
              print("El dni ingresado es incorrecto. solo numeros")
-
-# persona = Persona()
-# persona.setNombre("Dan")
-# persona.setDni(12345678)
-# persona.setEdad(18)
-# persona.mostrar()
-# persona.esMayorDeEdad()
+             return False
 
