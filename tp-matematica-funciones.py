@@ -57,10 +57,13 @@ def parabola(a,b,c):
     corte = b**2 -4*a*c
     if corte > 0:
         print(f"Corta el eje x : {corte}")
+        print("Tiene dos Raices Reales")
     if corte == 0:
         print("Toca el eje x pero no lo corta")
+        print("Tiene una Raiz Doble")
     if corte < 0:
         print("No corta con el eje x")
+        print("No tiene solucion")
     # Calcularmos los dos extremos por donde la parabola corta el eje x
     corte1= (-b + math.sqrt( b**2 - 4*a * c))/2*a
     corte2 = (-b - math.sqrt( b**2 - 4*a * c))/2*a
@@ -90,9 +93,9 @@ while run:
         else:
             analisisrecta(a,b)
     if opcion == 3:
-        a = int(input("Ingresar A: "))
-        b = int(input("Ingresar B: "))
-        c = int(input("Ingresar C: "))
+        a = int(input("Ingresar Coeficiente principal: "))
+        b = int(input("Ingresar Coeficiente lineal: "))
+        c = int(input("Ingresar Termino Independiente: "))
         parabola(a,b,c)
     if opcion == 999:
         run = False
