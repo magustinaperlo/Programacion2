@@ -63,12 +63,12 @@ def parabola(a,b,c):
         print(f"Determinante: {determinante}")
         print("Tiene dos Raices Reales")
         # Calcularmos los dos extremos por donde la parabola corta el eje x
-        corte1= (-b + math.sqrt(determinante))/2*a
-        corte2 = (-b - math.sqrt(determinante))/2*a
+        corte1= (-b + math.sqrt(determinante))/(2*a)
+        corte2 = (-b - math.sqrt(determinante))/(2*a)
         print(f"Los cortes en x son x1: {corte1} x2: {corte2}")
     elif determinante == 0:
         print("Toca el eje x pero no lo corta")
-        corte= (-b + math.sqrt(determinante))/2*a
+        corte= (-b + math.sqrt(determinante))/(2*a)
         print(f"Tiene una Raiz Doble x1: {corte} x2: {corte}")
     elif determinante < 0:
         print("No corta con el eje x")
