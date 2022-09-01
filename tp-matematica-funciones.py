@@ -44,20 +44,23 @@ def analisisrecta(a,b):
     """)
     #   Funcion de Parabola
 def parabola(a,b,c):
-    #Comprobamos hacia donde va la parabola
-    if a < 0 :
-        direccion = "Parabola Concava Arriba"
-    if a > 0:
-        direccion = "Parabola Concava Abajo"
+    print(f"Corte en el eje y: {c}")
     # Calculamos el eje de simetria
     ejesimetria = -(b/(2*a))
     # Calculamos el Vertice de la parabola
     vertice = a*(ejesimetria)**2 + b*(ejesimetria) + c
+    #Comprobamos hacia donde va la parabola
+    if a < 0 :
+        direccion = "Parabola Concava Hacia Abajo"
+        print(f'la parabola crece hasta {ejesimetria} y luego decrece')
+    if a > 0:
+        direccion = "Parabola Concava Hacia Arriba"
+        print(f'la parabola decrece hasta {ejesimetria} y luego crece')
     # Comprobamos si hay corte en el eje x
     determinante = b**2 -4*a*c
     print(f"la parabola es {direccion} su eje de simetria es {ejesimetria} y su vertice es {vertice} ")
     if determinante > 0:
-        print(f"Corta el eje x : {determinante}")
+        print(f"Determinante: {determinante}")
         print("Tiene dos Raices Reales")
         # Calcularmos los dos extremos por donde la parabola corta el eje x
         corte1= (-b + math.sqrt(determinante))/2*a
@@ -70,36 +73,51 @@ def parabola(a,b,c):
     elif determinante < 0:
         print("No corta con el eje x")
         print("No tiene raíces dentro de los números reales")
+    
 
     #   Bucle Principal
 while run:
-    print("1- Rectas paralela y perpendicular a una dada\n2- Análisis de una recta\n3- Análisis de una parábola\n999- Salir")
-    opcion = float(input("Elige una opción: "))
+    try:
+        print("1- Rectas paralela y perpendicular a una dada\n2- Análisis de una recta\n3- Análisis de una parábola\n999- Salir")
+        opcion = float(input("Elige una opción: "))
 
-    if opcion == 1:
-        a = float(input("Ingresa el termino coeficiente principal: "))
-        b = float(input("Ingresa el termino independiente: "))
-        if a == 0:
-            print("El coeficiente principal no puede ser cero")
-            continue
+        if opcion == 1:
+            try:
+                a = float(input("Ingresa el termino coeficiente principal: "))
+                b = float(input("Ingresa el termino independiente: "))
+                if a == 0:
+                    print("El coeficiente principal no puede ser cero")
+                    continue
+                else:
+                    paralela(a,b)
+                    perpendicular(a,b)
+            except:
+                print("Solo numeros")
+        if opcion == 2:
+            try:
+                a = float(input("Ingresa el termino coeficiente principal: "))
+                b = float(input("Ingresa el termino independiente: "))
+                if a == 0:
+                    print("El coeficiente principal no puede ser cero")
+                    continue
+                else:
+                    analisisrecta(a,b)
+            except:
+                print("Solo numeros")
+        if opcion == 3:
+            try:
+                a = float(input("Ingresar Coeficiente principal: "))
+                b = float(input("Ingresar Coeficiente lineal: "))
+                c = float(input("Ingresar Termino Independiente: "))
+                parabola(a,b,c)
+            except:
+                print("Solo se ingresan numeros")
+        if opcion == 999:
+            run = False
         else:
-            paralela(a,b)
-            perpendicular(a,b)
-    if opcion == 2:
-        a = float(input("Ingresa el termino coeficiente principal: "))
-        b = float(input("Ingresa el termino independiente: "))
-        if a == 0:
-            print("El coeficiente principal no puede ser cero")
-            continue
-        else:
-            analisisrecta(a,b)
-    if opcion == 3:
-        a = float(input("Ingresar Coeficiente principal: "))
-        b = float(input("Ingresar Coeficiente lineal: "))
-        c = float(input("Ingresar Termino Independiente: "))
-        parabola(a,b,c)
-    if opcion == 999:
-        run = False
+            print("Ingrese una opcion valida")
+    except:
+        print("Solo Acepta numeros")
 
 
 
