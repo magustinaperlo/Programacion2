@@ -54,21 +54,22 @@ def parabola(a,b,c):
     # Calculamos el Vertice de la parabola
     vertice = a*(ejesimetria)**2 + b*(ejesimetria) + c
     # Comprobamos si hay corte en el eje x
-    corte = b**2 -4*a*c
-    if corte > 0:
-        print(f"Corta el eje x : {corte}")
-        print("Tiene dos Raices Reales")
-    if corte == 0:
-        print("Toca el eje x pero no lo corta")
-        print("Tiene una Raiz Doble")
-    if corte < 0:
-        print("No corta con el eje x")
-        print("No tiene solucion")
-    # Calcularmos los dos extremos por donde la parabola corta el eje x
-    corte1= (-b + math.sqrt( b**2 - 4*a * c))/2*a
-    corte2 = (-b - math.sqrt( b**2 - 4*a * c))/2*a
+    determinante = b**2 -4*a*c
     print(f"la parabola es {direccion} su eje de simetria es {ejesimetria} y su vertice es {vertice} ")
-    print(f"Los cortes en x son x1:{corte1} x2:{corte2}")
+    if determinante > 0:
+        print(f"Corta el eje x : {determinante}")
+        print("Tiene dos Raices Reales")
+        # Calcularmos los dos extremos por donde la parabola corta el eje x
+        corte1= (-b + math.sqrt(determinante))/2*a
+        corte2 = (-b - math.sqrt(determinante))/2*a
+        print(f"Los cortes en x son x1: {corte1} x2: {corte2}")
+    elif determinante == 0:
+        print("Toca el eje x pero no lo corta")
+        corte= (-b + math.sqrt(determinante))/2*a
+        print(f"Tiene una Raiz Doble x1: {corte} x2: {corte}")
+    elif determinante < 0:
+        print("No corta con el eje x")
+        print("No tiene raíces dentro de los números reales")
 
     #   Bucle Principal
 while run:
