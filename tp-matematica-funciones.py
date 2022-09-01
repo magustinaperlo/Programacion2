@@ -73,11 +73,11 @@ def parabola(a,b,c):
     #   Bucle Principal
 while run:
     print("1- Rectas paralela y perpendicular a una dada\n2- Análisis de una recta\n3- Análisis de una parábola\n999- Salir")
-    opcion = int(input("Elige una opción: "))
+    opcion = float(input("Elige una opción: "))
 
     if opcion == 1:
-        a = int(input("Ingresa el termino coeficiente principal: "))
-        b = int(input("Ingresa el termino independiente: "))
+        a = float(input("Ingresa el termino coeficiente principal: "))
+        b = float(input("Ingresa el termino independiente: "))
         if a == 0:
             print("El coeficiente principal no puede ser cero")
             continue
@@ -85,17 +85,17 @@ while run:
             paralela(a,b)
             perpendicular(a,b)
     if opcion == 2:
-        a = int(input("Ingresa el termino coeficiente principal: "))
-        b = int(input("Ingresa el termino independiente: "))
+        a = float(input("Ingresa el termino coeficiente principal: "))
+        b = float(input("Ingresa el termino independiente: "))
         if a == 0:
             print("El coeficiente principal no puede ser cero")
             continue
         else:
             analisisrecta(a,b)
     if opcion == 3:
-        a = int(input("Ingresar Coeficiente principal: "))
-        b = int(input("Ingresar Coeficiente lineal: "))
-        c = int(input("Ingresar Termino Independiente: "))
+        a = float(input("Ingresar Coeficiente principal: "))
+        b = float(input("Ingresar Coeficiente lineal: "))
+        c = float(input("Ingresar Termino Independiente: "))
         parabola(a,b,c)
     if opcion == 999:
         run = False
