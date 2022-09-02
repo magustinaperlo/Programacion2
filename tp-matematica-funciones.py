@@ -59,8 +59,8 @@ def parabola(a,b,c):
     # Comprobamos si hay corte en el eje x
     determinante = b**2 -4*a*c
     print(f"la parabola es {direccion} su eje de simetria es {ejesimetria} y su vertice es {vertice} ")
+    print(f"Determinante: {determinante}")
     if determinante > 0:
-        print(f"Determinante: {determinante}")
         print("Tiene dos Raices Reales")
         # Calcularmos los dos extremos por donde la parabola corta el eje x
         corte1= (-b + math.sqrt(determinante))/(2*a)
