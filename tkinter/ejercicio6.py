@@ -33,6 +33,7 @@ entry3 = tk.Entry(ventana,textvariable=valor,state="readonly").grid()
 
 #   Botones
 
+
 btn1 = tk.Button(ventana,text="+",command=suma).grid()
 btn2 = tk.Button(ventana,text="-",command=restar).grid()
 btn3 = tk.Button(ventana,text="%",command=porcent).grid()
