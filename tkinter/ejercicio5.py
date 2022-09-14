@@ -10,6 +10,10 @@ def reset():
     valor.set(0)
 ventana = tk.Tk()
 ventana.title("Contador ")
+ventana.resizable(False, False)
+ventana.geometry("240x170")
+
+
 valor = tk.IntVar(value=0)
 label = tk.Label(ventana,text="Contador").pack()
 boton2 = tk.Button(ventana,text="restar",command = restar).pack()
