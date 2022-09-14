@@ -5,6 +5,8 @@ import tkinter as tk
 
 ventana = tk.Tk()
 ventana.title("Contador factorial")
+ventana.resizable(False, False)
+ventana.geometry("440x170")
 
 
 def factor():
